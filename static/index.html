@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vue app</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app" class="body" style="display: none;">
+    <div class="loader" v-if="stage=='loading'">
+      <img src="./images/loader.gif" alt="" srcset="">
+    </div>
+    <div v-if="stage=='init'">
+      <h1>Vue Starter App is live!</h1>
+      <button v-on:click="stage='page2'">Go to page 2</button>
+    </div>
+    <div class="result" v-if="stage=='page2'">
+      <h1>This is Page 2</h1>
+      <button v-on:click="stage='init'">Go back to init</button>
+    </div>
+  </div>
+  </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="./script.js" type="module"></script>
+
+</html>
